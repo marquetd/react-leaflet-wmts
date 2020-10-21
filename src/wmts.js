@@ -52,7 +52,7 @@ export default L.TileLayer.extend({
     var tilewidth = se.x - nw.x;
     //zoom = this._map.getZoom();
     var ident = this.matrixIds[zoom].identifier;
-    var tilematrix = this.wmtsParams.tilematrixSet + ':' + ident;
+    var tilematrix = ident;
     var X0 = this.matrixIds[zoom].topLeftCorner.lng;
     var Y0 = this.matrixIds[zoom].topLeftCorner.lat;
     var tilecol = Math.floor((nw.x - X0) / tilewidth);
