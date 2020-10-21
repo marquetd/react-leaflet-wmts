@@ -10,10 +10,10 @@ export default L.TileLayer.extend({
     layers: '',
     styles: '',
     tilematrixSet: '',
-    format: 'image/jpeg'
+    format: 'image/jpeg',
   },
 
-  initialize: function(url, options) {
+  initialize: function (url, options) {
     // (String, Object)
     this._url = url;
     var wmtsParams = L.extend({}, this.defaultWmtsParams);
@@ -34,12 +34,12 @@ export default L.TileLayer.extend({
     L.setOptions(this, options);
   },
 
-  onAdd: function(map) {
+  onAdd: function (map) {
     this._crs = this.options.crs || map.options.crs;
     L.TileLayer.prototype.onAdd.call(this, map);
   },
 
-  getTileUrl: function(coords) {
+  getTileUrl: function (coords) {
     // (Point, Number) -> String
     var tileSize = this.options.tileSize;
     var nwPoint = coords.multiplyBy(tileSize);
@@ -85,7 +85,7 @@ export default L.TileLayer.extend({
       */
   },
 
-  setParams: function(params, noRedraw) {
+  setParams: function (params, noRedraw) {
     L.extend(this.wmtsParams, params);
     if (!noRedraw) {
       this.redraw();
@@ -93,7 +93,7 @@ export default L.TileLayer.extend({
     return this;
   },
 
-  getDefaultMatrix: function() {
+  getDefaultMatrix: function () {
     /**
      * the matrix3857 represents the projection
      * for in the IGN WMTS for the google coordinates.
@@ -102,9 +102,9 @@ export default L.TileLayer.extend({
     for (var i = 0; i < 22; i++) {
       matrixIds3857[i] = {
         identifier: '' + i,
-        topLeftCorner: new L.LatLng(20037508.3428, -20037508.3428)
+        topLeftCorner: new L.LatLng(20037508.3428, -20037508.3428),
       };
     }
     return matrixIds3857;
-  }
+  },
 });
