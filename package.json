@@ -1,6 +1,6 @@
 {
   "name": "@marquetd/react-leaflet-wmts",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "WMTS TileLayer plugin to react-leaflet",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
